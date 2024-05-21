@@ -66,14 +66,27 @@ function Navbar() {
         </li>
       </ul>
 
-      <button
-        className="navbar-btn"
-        type="button"
-        disabled={isButtonDisabled}
-        onClick={handleChatBtnClick}
-      >
-        <FontAwesomeIcon icon={faCommentDots} /> Live Chat
-      </button>
+      <div className="navbar-btn-container">
+        <Link to="/chat" className="navbar-btn-link">
+          <button
+            className="navbar-btn"
+            type="button"
+            disabled={isButtonDisabled}
+            onClick={handleChatBtnClick}
+          >
+            <FontAwesomeIcon icon={faCommentDots} /> Live Chat
+          </button>
+        </Link>
+        
+        <a href="http://127.0.0.1:3001/index.html" className="navbar-btn-link">
+          <button
+            className="navbar-btn"
+            type="button"
+          >
+            Blood Bank
+          </button>
+        </a>
+      </div>
 
       {/* Mobile */}
       <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
